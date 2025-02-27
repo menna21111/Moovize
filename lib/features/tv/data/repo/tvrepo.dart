@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
+import '../../../../core/constants/Url.dart';
 import '../../../../core/helper/apiservice.dart';
-import '../../../../core/helper/constants/Url.dart';
+
 import '../../../../core/helper/failure.dart';
 import '../../../home/data/models/generesmodel.dart';
 import '../../../home/data/models/movie_responsemodel.dart';

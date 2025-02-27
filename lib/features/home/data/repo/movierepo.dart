@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
+import '../../../../core/constants/Url.dart';
 import '../../../../core/helper/apiservice.dart';
-import '../../../../core/helper/constants/Url.dart';
+
 import '../../../../core/helper/failure.dart';
 import '../models/movie_responsemodel.dart';
 import '../models/moviemodels/castmodel.dart';
@@ -92,10 +95,9 @@ class Movierepo {
       if (!response.containsKey('status_code')) {
         final data = MovieResponse.fromJson(response);
         return right(data);
-      }else{
+      } else {
         return left(ServerFailure(response['status_message'].toString()));
       }
-  
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
@@ -116,6 +118,7 @@ class Movierepo {
         ),
       );
       final data = MovieDetails.fromJson(response);
+      log('$data');
       return right(data);
     } catch (e) {
       if (e is DioException) {

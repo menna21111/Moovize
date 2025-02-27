@@ -2,7 +2,8 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 
-import 'constants/Url.dart';
+import '../constants/Url.dart';
+
 
 
 class Apiservice {

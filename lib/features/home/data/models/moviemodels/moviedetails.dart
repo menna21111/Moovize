@@ -81,31 +81,33 @@ class MovieDetails {
   }
 
   // Add the toJson method to convert MovieDetails to a JSON object
-  Map<String, dynamic> toJson() {
-    return {
-      'adult': adult,
-      'backdrop_path': backdropPath,
-      'belongs_to_collection': belongsToCollection,
-      'budget': budget,
-      'homepage': homepage,
-      'id': id,
-      'imdb_id': imdbId,
-      'origin_country': originCountry,
-      'original_language': originalLanguage,
-      'original_title': originalTitle,
-      'overview': overview,
-      'popularity': popularity,
-      'poster_path': posterPath,
-      'release_date': releaseDate,
-      'revenue': revenue,
-      'runtime': runtime,
-      'status': status,
-      'tagline': tagline,
-      'title': title,
-      'video': video,
-      'vote_average': voteAverage,
-      'vote_count': voteCount,
-    };
-  }
+ Map<String, dynamic> toJson() {
+  return {
+    'adult': adult,
+    'backdrop_path': backdropPath,
+    'belongs_to_collection': belongsToCollection,
+    'budget': budget,
+    'homepage': homepage,
+    'id': id ?? 0, // Ensure it's always an int
+    'imdb_id': imdbId,
+    'origin_country': originCountry,
+    'original_language': originalLanguage,
+    'original_title': originalTitle,
+    'overview': overview,
+    'popularity': popularity,
+    'poster_path': posterPath,
+    'release_date': releaseDate,
+    'revenue': revenue,
+    'runtime': runtime,
+    'status': status,
+    'tagline': tagline,
+    'title': title,
+    'video': video,
+    'vote_average': voteAverage,
+    'vote_count': voteCount,
+  };
+}
+
+  
 }
   // The toHiveModel method added for conversion to the Hive model

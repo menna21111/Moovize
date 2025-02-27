@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+import '../../../../fav/presination/view/screan/favscrean.dart';
+import '../../../../search/presination/views/screean/searchscrean.dart';
+import '../../../../tv/presination/views/screan/tvscrean.dart';
+import '../screan/homescrean.dart';
+
 class Bottomnavbar extends StatefulWidget {
   const Bottomnavbar({super.key});
 
@@ -16,18 +21,10 @@ class _BottomnavbarState extends State<Bottomnavbar> {
     });
   }
 
-  List<Widget> pages = [const Center(
-        child: Text("home"),
-      ),
+  List<Widget> pages = [const Homescrean() 
       
-      const Center(
-        child: Text("fav"),
-      ),
-      const Center(
-        child: Text("search"),
-      ),const Center(
-        child: Text("tv"),
-      ),
+    ,const Searchscrean() ,
+     const Tvscrean() ,const Favscrean() ,
       ];
 
   @override
@@ -37,7 +34,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
       bottomNavigationBar: Container(
         color: Colors.black,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15),
           child: GNav(
               selectedIndex: currentindex,
               gap: 8,
