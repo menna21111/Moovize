@@ -8,7 +8,6 @@ import '../../../../../core/constants/size.dart';
 import '../../../../rating/presination/bloc/addrating_bloc.dart';
 import '../../../data/models/moviemodels/moviedetails.dart';
 
-
 class Filminfodata extends StatefulWidget {
   const Filminfodata({super.key, required this.movie});
   final MovieDetails movie;
@@ -20,15 +19,26 @@ class Filminfodata extends StatefulWidget {
 class _FilminfodataState extends State<Filminfodata> {
   double _rating = 0;
 
-
   @override
   Widget build(BuildContext context) {
     Screan_size.init(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // BlocConsumer<AddratingBloc, AddratingState>(
+        //   listener: (context, state) {
+        //        if (state is Addratingscuess) {
+            
+            
+        //     }
+        //   },
+        //   builder: (context, state) {
+         
+        //     return Container();
+        //   },
+        // ),
         // Your existing code...
- SizedBox(
+        SizedBox(
           width: Screan_size.width * .5,
           child: Text(
             widget.movie.title ?? 'movie',
@@ -44,7 +54,7 @@ class _FilminfodataState extends State<Filminfodata> {
         const SizedBox(height: 2),
         Row(
           children: [
-            Icon(
+            const Icon(
               Icons.visibility_outlined,
               color: kwhitecolor,
               size: 16,
@@ -61,9 +71,9 @@ class _FilminfodataState extends State<Filminfodata> {
         ),
         const SizedBox(height: 5),
         widget.movie.adult
-            ? Text(
+            ? const Text(
                 '18+',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 13,
                   color: kwhitecolor,
                 ),
@@ -72,7 +82,7 @@ class _FilminfodataState extends State<Filminfodata> {
         const SizedBox(height: 5),
         Text(
           '${widget.movie.runtime} min',
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 13,
             color: kwhitecolor,
           ),
@@ -87,9 +97,9 @@ class _FilminfodataState extends State<Filminfodata> {
             ),
             Text(
               ' ${widget.movie.voteAverage.toString()}',
-              style: TextStyle(color: kwhitecolor),
+              style: const TextStyle(color: kwhitecolor),
             ),
-             SizedBox(width: Screan_size.width*.09),
+            SizedBox(width: Screan_size.width * .09),
             Row(
               children: [
                 GestureDetector(
@@ -127,16 +137,17 @@ class _FilminfodataState extends State<Filminfodata> {
                                           AddRate(
                                               widget.movie.id ?? 278, _rating),
                                         );
-
-                               ScaffoldMessenger.of(context).showSnackBar(
-         SnackBar(
-          backgroundColor: khhomecolor,
-          content: Text(
-            'Success! your rating updated to $_rating',
-            style: const TextStyle(color: kwhitecolor),
-          ),
-        ),
-      );
+     ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        backgroundColor: khhomecolor,
+                                        content: Text(
+                                          'Success! your rating updated to $_rating',
+                                          style: const TextStyle(
+                                              color: kwhitecolor),
+                                        ),
+                                      ),
+                                    );
+                                 
 
                                     Navigator.pop(context);
                                   },
@@ -191,7 +202,6 @@ class _FilminfodataState extends State<Filminfodata> {
           ],
         ),
         SizedBox(height: Screan_size.hieght * .01),
-      
       ],
     );
   }

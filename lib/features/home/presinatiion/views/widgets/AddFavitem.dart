@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moovize/features/home/data/models/moviemodels/moviedetails.dart';
+import '../../../../../core/constants/colors.dart';
 import '../../../../fav/presination/bloc/adddeletefav/bloc/adddeletfav_bloc.dart';
 import '../../../../fav/presination/bloc/get/fav_bloc.dart';
 import '../../../data/models/movie_responsemodel.dart';
@@ -24,8 +25,8 @@ class AddFavitem extends StatelessWidget {
         return IconButton(
           icon: Icon(
             isFavorite ? Icons.favorite : Icons.favorite_border_outlined,
-            size: 40,
-            color: isFavorite ? Colors.red : Colors.pink,
+            size: 44,
+            color: isFavorite ? khomecolor : khomecolor,
           ),
           onPressed: () {
             if (isFavorite) {

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
@@ -26,6 +28,7 @@ class Raterepo {
         ),
       );
       final data = AddRatingResponse.fromJson(response);
+      log('${data}');
       return right(data);
     } catch (e) {
       if (e is DioException) {
@@ -35,30 +38,27 @@ class Raterepo {
     }
   }
 
-Future<Either<Failure, RatedMoviesResponse>> isRated() async {
-  try {
-    final response = await apiservice.getwsessionid(
-      endpoint: 'account/21572946/rated/movies',
-      options: Options(
-        headers: {
-          'Authorization': 'Bearer ${URL.accessToken}',
-          'Content-Type': 'application/json',
-        },
-      ),
-    );
+  Future<Either<Failure, RatedMoviesResponse>> isRated() async {
+    try {
+      final response = await apiservice.getwsessionid(
+        endpoint: 'account/21572946/rated/movies',
+        options: Options(
+          headers: {
+            'Authorization': 'Bearer ${URL.accessToken}',
+            'Content-Type': 'application/json',
+          },
+        ),
+      );
 
-   
-    final data = RatedMoviesResponse.fromJson(response);
-    return right(data);
-
-  } catch (e) {
-    if (e is DioException) {
-      return left(ServerFailure.fromDioError(e));
+      final data = RatedMoviesResponse.fromJson(response);
+      return right(data);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
-    return left(ServerFailure(e.toString()));
   }
-}
-
 
   Future<Either<Failure, AddRatingResponse>> deleterating(int movieid) async {
     try {

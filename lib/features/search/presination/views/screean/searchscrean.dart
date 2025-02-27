@@ -18,10 +18,11 @@ class Searchscrean extends StatelessWidget {
     Screan_size.init(context);
     return  Scaffold(
         appBar: AppBar(
-        backgroundColor: kblackcolor,
+    
         title: const Text(
           'search',
-          style: TextStyle(color: khomecolor, fontSize: 25, fontWeight: FontWeight.bold),
+          style: TextStyle(
+             fontSize: 25, fontWeight: FontWeight.bold),
         ),
         actions: [
           Title(color: kblackcolor, child: Image.asset('assets/images/logo (2).png')),
@@ -90,7 +91,7 @@ class Searchscrean extends StatelessWidget {
                           padding: EdgeInsets.only(left:  15.0,bottom: 15),
                           child: Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('TOP search',style: TextStyle(color: kwhitecolor,fontSize: 16,fontWeight: FontWeight.bold),)),
+                            child: Text('TOP search',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
                         ),
                         Expanded(child: Gridsearch())
           ],

@@ -14,6 +14,7 @@ import '../widgets/cast.dart';
 import '../widgets/filminfo.dart';
 import '../widgets/overview.dart';
 import '../widgets/posterphotoandinfo.dart';
+import '../widgets/reviews.dart';
 import '../widgets/similarmovie.dart';
 import '../widgets/video.dart';
 
@@ -105,9 +106,26 @@ final Movie movie;
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
+                      'Reviews',
+                      style: TextStyle(
+                          color: Colors.yellow     ,                  fontSize: 16,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child:
+                      SizedBox(height: Screan_size.hieght * .25 , child: Reviews()),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
                       'Cast',
                       style: TextStyle(
-                          color: kwhitecolor,
+                       color: Colors.yellow,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
@@ -125,7 +143,7 @@ final Movie movie;
                     child: Text(
                       'similar movies',
                       style: TextStyle(
-                          color: kwhitecolor,
+                         color: Colors.yellow,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),

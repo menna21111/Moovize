@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moovize/core/constants/colors.dart';
 
 enum AppTheme {
   light("Light"),
@@ -9,7 +10,10 @@ enum AppTheme {
 }
 
 final appthemedata = {
+
   AppTheme.light: ThemeData(
+    
+    
     brightness: Brightness.light,
     appBarTheme:const AppBarTheme(
       backgroundColor: Colors.white,
@@ -19,6 +23,7 @@ final appthemedata = {
     scaffoldBackgroundColor:Colors.white,
   ),
   AppTheme.dark: ThemeData(
+   
    brightness: Brightness.dark,
     scaffoldBackgroundColor:Colors.black,
        appBarTheme:const AppBarTheme(

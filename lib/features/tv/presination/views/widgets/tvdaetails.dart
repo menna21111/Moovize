@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/constants/colors.dart';
 import '../../../../../core/constants/size.dart';
 import '../../../../../core/widgets/loadingshimmer.dart';
+import '../../../../home/presinatiion/views/widgets/cast.dart';
+import '../../../../home/presinatiion/views/widgets/similarmovie.dart';
 import '../../bloc/detailstv_bloc.dart';
 import 'overviewtv.dart';
 import 'photopostertv.dart';
@@ -37,7 +39,42 @@ class Tvdaetails extends StatelessWidget {
                     child: Overviewtv(
                       moviedetails: state.data,
                     )),
-             
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Cast',
+                      style: TextStyle(
+                      
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child:
+                      SizedBox(height: Screan_size.hieght * .3, child: Cast()),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'similar shows',
+                      style: TextStyle(
+                     
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                      height: Screan_size.hieght * .3, child: Similarmovie()),
+                )
               
               ],
             ),
@@ -46,7 +83,7 @@ class Tvdaetails extends StatelessWidget {
           return Center(
             child: Text(
               state.failure.errMessage,
-              style: const TextStyle(color: kwhitecolor),
+           
             ),
           );
         } else {

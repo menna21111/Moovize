@@ -41,7 +41,7 @@ class CategoriesGrid extends StatelessWidget {
                            
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: Cachedimage(imageUrl: state.data.results![1].backdropPath??'', height: 0, width: 0, borderraduis: 0)
+                          child: Cachedimage(imageUrl: state.data.results![index].backdropPath??'', height: 0, width: 0, borderraduis: 0)
                         ),
 
                         Text(state.data.results![1].name??'')
@@ -55,7 +55,7 @@ class CategoriesGrid extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>  Tvdaetails(tvid:state.data.results![1].id??278 ,)));
+                              builder: (context) =>  Tvdaetails(tvid:state.data.results![index].id??278 ,)));
                     },
                   child: Stack(
                         alignment: Alignment.bottomCenter,

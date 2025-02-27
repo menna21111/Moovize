@@ -19,7 +19,7 @@ class Cast extends StatelessWidget {
         if (state.data.cast.isEmpty) {
           return const Center(
             child: Text('No cast data found.',
-                style: TextStyle(color: kwhitecolor)),
+               ),
           );
         }
         return ListView.builder(
@@ -47,7 +47,7 @@ class Cast extends StatelessWidget {
                     ),
                     Text(
                       state.data.cast[index].name ?? '',
-                      style: TextStyle(color: kwhitecolor),
+
                     ),
                     
                   ],

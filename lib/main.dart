@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/helper/apiservice.dart';
 import 'core/helper/cachhelper.dart';
+import 'core/theming/app_theme.dart';
 import 'core/theming/apptheme/cubit/apptheme_cubit.dart';
 import 'features/fav/data/repo/favrepo.dart';
 import 'features/fav/presination/bloc/adddeletefav/bloc/adddeletfav_bloc.dart';
@@ -70,8 +73,8 @@ class Moovize extends StatelessWidget {
           create: (BuildContext context) =>
               MovieblocBloc(Movierepo(Apiservice(Dio()))),
         ),
-        BlocProvider(create: (BuildContext context) => AppthemeCubit()..getthemeTheme()),
-
+        BlocProvider(
+            create: (BuildContext context) => AppthemeCubit()..getthemeTheme()),
         BlocProvider(
             create: (BuildContext context) =>
                 CastBloc(Movierepo(Apiservice(Dio())))),
@@ -116,9 +119,11 @@ class Moovize extends StatelessWidget {
                 FavBloc(favRepoImpl: FavRepoImpl(cachehelper: CacheHelper()))),
       ],
       child: BlocBuilder<AppthemeCubit, ChangeTheme>(
-        builder: (context, state) {
+        builder: (context, state) {          bool isdark =    state.theme == appthemedata[AppTheme.dark]!;
+        log('is dark: ${isdark}');
           return MaterialApp(
             builder: (context, child) {
+
               return MediaQuery(
                   data: MediaQuery.of(context)
                       .copyWith(textScaler: TextScaler.linear(1.0)),
@@ -126,7 +131,9 @@ class Moovize extends StatelessWidget {
             },
             // themeMode: ThemeMode.dark,
             theme: state.theme,
-            home: const Splachscreanview(),
+            home: Splachscreanview(
+              isdark:isdark
+            ),
             debugShowCheckedModeBanner: false,
           );
         },

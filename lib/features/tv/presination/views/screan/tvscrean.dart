@@ -19,14 +19,14 @@ class Tvscrean extends StatelessWidget {
     Screan_size.init(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kblackcolor,
+       
         actions: [
           Title(color: kblackcolor, child: Image.asset('assets/images/logo (2).png')),
         ],
         title: const Text(
           'tv',
           style: TextStyle(
-              color: khomecolor, fontSize: 25, fontWeight: FontWeight.bold),
+             fontSize: 25, fontWeight: FontWeight.bold),
         ),
       ),
       body: CustomScrollView(
@@ -45,7 +45,7 @@ class Tvscrean extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                    
                         ),
                       ),
                       Text(
@@ -53,7 +53,7 @@ class Tvscrean extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                      
                         ),
                       ),
                     ],

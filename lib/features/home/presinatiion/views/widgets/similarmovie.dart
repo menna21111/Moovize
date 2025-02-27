@@ -60,7 +60,7 @@ class Similarmovie extends StatelessWidget {
                               .split(' ')
                               .take(3)
                               .join(' '),
-                          style: TextStyle(color: kwhitecolor),
+                     
                         ),
                       ],
                     ),

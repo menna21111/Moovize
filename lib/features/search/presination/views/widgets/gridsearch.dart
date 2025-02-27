@@ -58,7 +58,7 @@ class Gridsearch extends StatelessWidget {
                     Text(
                       state.popular.results[index].title ?? '',
                       style: const TextStyle(
-                        color: Colors.white,
+                 
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -70,7 +70,7 @@ class Gridsearch extends StatelessWidget {
                         Text(
                           state.popular.results[index].voteAverage.toString(),
                           style: const TextStyle(
-                            color: Colors.white,
+                         
                             fontSize: 14,
                           ),
                         ),

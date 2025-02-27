@@ -48,17 +48,17 @@ class Ontv extends StatelessWidget {
                     ),
                     Text(
                       state.nowontv.results![index].name ?? 'moviiename',
-                      style: TextStyle(color: kwhitecolor),
+                      // style: TextStyle(color: kwhitecolor),
                     ),
                     Row(
                       children: [
-                        Imob(),
-                        SizedBox(
+                        const Imob(),
+                        const SizedBox(
                           width: 5,
                         ),
                         Text(
                           state.nowontv.results![index].voteAverage.toString(),
-                          style: TextStyle(color: kwhitecolor),
+                          // style: TextStyle(color: kwhitecolor),
                         ),
                       ],
                     )

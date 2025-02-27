@@ -100,7 +100,7 @@ class Homescrean extends StatelessWidget {
               padding: const EdgeInsets.only(left: 8.0),
               child: const Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('top on Netflix 🔥',
+                  child: Text('top rated 🔥',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,

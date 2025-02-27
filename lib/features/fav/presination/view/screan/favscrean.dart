@@ -19,10 +19,10 @@ class Favscrean extends StatelessWidget {
     context.read<FavBloc>().add(GetFavEvent());
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kblackcolor,
+   
         title: const Text(
           'Faviortes',
-          style: TextStyle(color: khomecolor, fontSize: 25,fontWeight: FontWeight.bold ),
+          style: TextStyle( fontSize: 25,fontWeight: FontWeight.bold ),
         ),
         actions: [
           Title(color: kblackcolor, child: Image.asset('assets/images/logo (2).png')),
@@ -34,7 +34,7 @@ class Favscrean extends StatelessWidget {
             return const Center(
               child: Text(
                 'No Favourites yet',
-                style: TextStyle(color: kwhitecolor),
+
               ),
             );
           } else {
