@@ -1,6 +1,6 @@
 # moovize
 
-Netflix - Flutter Movie App This project is a comprehensive movie application called Netflix, built using Flutter. It allows users to search for movies, view detailed information, manage a favorites list, and interact with movie ratings. The app integrates with The Movie Database (TMDb) API for movie data and showcases best practices in Flutter development, clean code architecture, and effective state management.
+Moovize - Flutter Movie App This project is a comprehensive movie application called Netflix, built using Flutter. It allows users to search for movies, view detailed information, manage a favorites list, and interact with movie ratings. The app integrates with The Movie Database (TMDb) API for movie data and showcases best practices in Flutter development, clean code architecture, and effective state management.
 
 Project Overview
 
