@@ -4,7 +4,7 @@ Moovize - Flutter Movie App This project is a comprehensive movie application ca
 
 Project Overview
 
-The goal of this project was to build a movie application named Netflix that provides the following features:
+The goal of this project was to build a movie application named MOoviz that provides the following features:
 
 Discover movies and TV shows View movie details, including cast, similar movies, reviews, and categories Add movies to a favorites list, saved with local data storage Implement a search feature with recommendations while typing and display top-searched items Rate movies and manage user ratings View categorized lists such as Top-Rated Films, Popular TV Shows, and On-Air TV Shows The app utilizes the TMDb API for movie data retrieval, Bloc for state management, and follows the MVVM architecture pattern for clean and maintainable code.
 
